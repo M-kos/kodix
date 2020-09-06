@@ -4,5 +4,10 @@
     "browser": true
   },
   "extends": "google",
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "rules": {
+    "semi": ["error", "never"],
+    "object-curly-spacing": ["error", "always"]
+  },
+  "parser": "babel-eslint"
 }

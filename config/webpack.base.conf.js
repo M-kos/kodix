@@ -6,26 +6,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  assets: 'assets/',
 }
 
 module.exports = {
   externals: {
-    paths: PATHS
+    paths: PATHS,
   },
   entry: {
-    app: PATHS.src
+    app: PATHS.src,
   },
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.json', '.png'],
     alias: {
-      '@': PATHS.src
-    }
+      '@': PATHS.src,
+    },
   },
   optimization: {
     splitChunks: {
@@ -34,31 +34,31 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: '/node_modules/'
+        exclude: '/node_modules/',
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
-        }
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]'
-        }
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.css$/,
@@ -66,24 +66,26 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true, url: false }
+            options: { sourceMap: true, url: false },
           },
           {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: '' } }
-          }
-        ]
-      }
-    ]
+            options: { sourceMap: true, config: { path: '' } },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}css/[name].[hash].css`
+      filename: `${PATHS.assets}css/[name].[hash].css`,
     }),
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
-      filename: './index.html'
+      filename: './index.html',
     }),
-    new CopyWebpackPlugin([{ from: `${PATHS.src}/assets`, to: PATHS.assets }])
-  ]
+    new CopyWebpackPlugin({
+      patterns: [{ from: `${PATHS.src}/assets`, to: PATHS.assets }],
+    }),
+  ],
 }
