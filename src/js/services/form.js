@@ -34,7 +34,7 @@ export const formHandler = (form, createHandler) => {
   const inputHandler = (event) => {
     const { name, value } = event.target
 
-    state[name] = value
+    state[name] = value.trim()
   }
 
   const clearCurrentColor = () => {
