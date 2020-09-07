@@ -73,6 +73,7 @@ body {
     "description description description"
     "colors status send";
   grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 130px;
 }
 
 /* Inputs style */
@@ -183,6 +184,7 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: #8b8b8b;
+  cursor: pointer;
 }
 
 .add-block__select-status.open {
@@ -191,6 +193,14 @@ body {
 
 .add-block__select-status > img {
   padding-right: 10px;
+}
+
+.add-block__select-status .select-body {
+  display: none;
+}
+
+.add-block__select-status.open .select-body {
+  display: block;
 }
 
 .select-title {
@@ -234,10 +244,12 @@ ul {
   font-size: 14px;
   line-height: 24px;
   color: #8b8b8b;
+  padding-bottom: 4px;
 }
 
 .colors-list {
   display: flex;
+  margin-left: -3px;
 }
 
 .color-item {
@@ -283,28 +295,110 @@ ul {
   background-color: #77cf61;
 }
 
+/* List block styles */
+.list-block {
+  margin-bottom: 260px;
+}
+
+.list-block__title {
+  font-size: 20px;
+  line-height: 23px;
+  color: #282d30;
+  border-left: 3px solid #8b8b8b;
+  padding-left: 12px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.table-row.head {
+  border-radius: 4px 4px 0px 0px;
+  background-color: #c3002f;
+  height: 44px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 450px 40px 45px 100px auto auto;
+  grid-column-gap: 15px;
+  padding: 12px 15px;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+  color: #323232;
+  background-color: #f5f6f6;
+  border-bottom: 1px solid #dadada;
+}
+
+.table-row:last-child {
+  border: none;
+}
+
+.table-row > .table-description {
+  font-size: 13px;
+  color: #8b8b8b;
+}
+
+.table-row > .table-color-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-row > .table-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-delete > button {
+  border: none;
+  background-color: transparent;
+  color: #8b8b8b;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 4px 15px;
+  width: 85px;
+  height: 29px;
+}
+
+.table-delete > button:hover {
+  background-color: #282d30;
+  color: #fff;
+}
+
+.table-delete > button:active {
+  background-color: #353b3f;
+  outline: none;
+}
+
 /***** MEDIA QUERIES *****/
 
 @media (max-width: 992px) {
   .main {
     width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (max-width: 720px) {
-  .main {
     padding-left: 10px;
     padding-right: 10px;
   }
-}
 
-@media (max-width: 572px) {
-  .header__logo {
-    width: 350px;
+  .add-block__form {
+    margin-bottom: 60px;
   }
 
+  .table-row {
+    padding-right: 5px;
+  }
+
+  .table-row {
+    grid-template-columns: 250px 40px 45px 100px auto 90px;
+    grid-column-gap: 10px;
+  }
+}
+
+@media (max-width: 719px) {
   .add-block__form {
     grid-template:
       "title title"
@@ -313,6 +407,65 @@ ul {
       "colors colors"
       "status send";
     grid-template-columns: 1fr 1fr;
+  }
+
+  .table-row {
+    grid-template:
+      "title title title color-value price price"
+      "description description description description description description"
+      "year status status status delete delete";
+    grid-row-gap: 10px;
+  }
+
+  .table-row > .table-title {
+    grid-area: title;
+  }
+  .table-row > .table-year {
+    grid-area: year;
+  }
+  .table-row > .table-color-value {
+    grid-area: color-value;
+  }
+  .table-row > .table-status {
+    grid-area: status;
+  }
+  .table-row > .table-price {
+    grid-area: price;
+  }
+  .table-row > .table-delete {
+    grid-area: delete;
+  }
+  .table-row > .table-description {
+    grid-area: description;
+  }
+
+  .table-row.head {
+    display: none;
+  }
+
+  .table-delete,
+  .table-price {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .table-delete > button {
+    background-color: #282d30;
+    color: #fff;
+  }
+
+  .list-block__title {
+    margin-bottom: 16px;
+  }
+
+  .list-block {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 572px) {
+  .header__logo {
+    width: 350px;
   }
 }
 
