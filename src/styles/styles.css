@@ -25,6 +25,16 @@ body {
   align-items: center;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /***** HEADER & FOOTER *****/
 
 .header,
@@ -102,9 +112,9 @@ body {
   position: absolute;
 }
 
-.label-active {
-  transform: translateY(100px);
-  transition: ease-in-out;
+.label.active {
+  transform: translateY(-32px);
+  transition: all 0.1s ease-in-out;
 }
 
 .add-block__form input:focus {
@@ -246,6 +256,7 @@ ul {
 
 .add-block__colors {
   grid-area: colors;
+  border: 1px solid transparent;
 }
 
 .add-block__colors.error {
@@ -334,7 +345,7 @@ ul {
 
 .table-row {
   display: grid;
-  grid-template-columns: 450px 40px 45px 100px auto auto;
+  grid-template-columns: 450px 40px 45px 100px 120px auto;
   grid-column-gap: 15px;
   padding: 12px 15px;
   font-weight: 300;
@@ -354,13 +365,8 @@ ul {
   color: #8b8b8b;
 }
 
-.table-row > div {
+.table-ceil.table-color {
   display: flex;
-  justify-content: start;
-  align-items: center;
-}
-
-.table-ceil.table-color-value {
   justify-content: center;
 }
 
@@ -368,6 +374,10 @@ ul {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.table-delete {
+  margin-top: -4px;
 }
 
 .table-delete > button {
@@ -443,6 +453,7 @@ ul {
       "title title title color-value price price"
       "description description description description description description"
       "year status status status delete delete";
+    grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 10px;
   }
 
@@ -452,7 +463,7 @@ ul {
   .table-row > .table-year {
     grid-area: year;
   }
-  .table-row > .table-color-value {
+  .table-row > .table-color {
     grid-area: color-value;
   }
   .table-row > .table-status {
