@@ -83,10 +83,7 @@ module.exports = {
       filename: './index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        { from: `${PATHS.src}/assets`, to: PATHS.assets },
-        { from: PATHS.src, to: PATHS.assets },
-      ],
+      patterns: [{ from: `${PATHS.src}/assets`, to: PATHS.assets }],
     }),
   ],
 }
