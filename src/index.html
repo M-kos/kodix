@@ -27,13 +27,13 @@
               name="description"
             />
             <div class="add-block__colors">
-              <p class="add-block__colors-title">Цвета</p>
-              <ul class="colors">
-                <li class="white"></li>
-                <li class="black"></li>
-                <li class="grey"></li>
-                <li class="red"></li>
-                <li class="green"></li>
+              <p class="add-block__colors-title">Цвет</p>
+              <ul class="colors-list">
+                <li class="color-item" data-color="white"><div class="color white"></div></li>
+                <li class="color-item" data-color="black"><div class="color black"></div></li>
+                <li class="color-item" data-color="grey"><div class="color grey"></div></li>
+                <li class="color-item" data-color="red"><div class="color red"></div></li>
+                <li class="color-item" data-color="green"><div class="color green"></div></li>
               </ul>
             </div>
             <div class="add-block__select-status" name="status">
@@ -44,7 +44,10 @@
                 <li class="select-body-item" data-select-value="not-available">Нет в наличии</li>
               </ul>
             </div>
-            <button class="add-block__btn-send">Отправить</button>
+            <button class="add-block__btn-send">
+              <span>Отправить</span>
+              <img src="./assets/arrow_right.svg" alt="arrow-right">
+            </button>
           </form>
         </div>
         <div class="list-block">
