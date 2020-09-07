@@ -104,7 +104,7 @@ body {
 
 .add-block__form input:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #282d30;
 }
 
 .add-block__form .error {
@@ -137,7 +137,7 @@ body {
 .add-block__btn-send {
   grid-area: send;
   border: none;
-  min-height: 44px;
+  height: 44px;
   background-color: #c3002f;
   border-radius: 4px;
   color: #ffffff;
@@ -170,6 +170,55 @@ body {
 /* Select style */
 .add-block__select-status {
   grid-area: status;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-color: #dadada;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-width: 2px;
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8b8b8b;
+}
+
+.add-block__select-status.open {
+  border-bottom-color: #282d30;
+}
+
+.add-block__select-status > img {
+  padding-right: 10px;
+}
+
+.select-title {
+  padding-top: 6px;
+}
+
+.select-body {
+  position: absolute;
+  top: 38px;
+  left: -1px;
+  right: -1px;
+  border: 1px solid #dadada;
+  border-top-color: #282d30;
+  z-index: 2;
+  padding: 10px;
+}
+
+.select-body-item {
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.select-body-item:last-child {
+  margin-bottom: 0;
+}
+
+.select-body-item:hover {
+  color: #282d30;
 }
 
 /* Color list style */
