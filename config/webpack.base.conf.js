@@ -45,7 +45,7 @@ module.exports = {
         exclude: '/node_modules/',
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -83,7 +83,10 @@ module.exports = {
       filename: './index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: `${PATHS.src}/assets`, to: PATHS.assets }],
+      patterns: [
+        { from: `${PATHS.src}/assets`, to: PATHS.assets },
+        { from: PATHS.src, to: PATHS.assets },
+      ],
     }),
   ],
 }
