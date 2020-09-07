@@ -61,6 +61,10 @@ body {
   font-size: 42px;
   line-height: 49px;
   color: #282d30;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* Form style */
@@ -460,6 +464,10 @@ ul {
 
   .list-block {
     margin-bottom: 0;
+  }
+
+  .main-title {
+    margin-bottom: 40px;
   }
 }
 
