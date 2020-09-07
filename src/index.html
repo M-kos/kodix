@@ -3,60 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" type="image/ico" />
+    <link rel="icon" href="./favicon.ico" type="image/ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <title>Kodix</title>
   </head>
   <body>
-    <header class="header">
-      <img class="header__logo" src="./assets/DUCK.png" alt="logo-duck" />
-    </header>
-    <section class="section">
-      <h1 class="section__title">
-        <span class="exclamation-mark">!</span>Ay caramba!
-      </h1>
-      <div class="add-block">
-        <form class="add-block__form">
-          <input type="text" class="add-block__input-title" name="title" />
-          <input type="number" class="add-block__input-year" name="year" />
-          <input type="number" class="add-block__input-price" name="price" />
-          <input
-            type="text"
-            class="add-block__input-description"
-            name="description"
-          />
-          <div class="add-block__colors">
-            <p class="add-block__colors-title">Цвета</p>
-            <div class="white"></div>
-            <div class="black"></div>
-            <div class="grey"></div>
-            <div class="red"></div>
-            <div class="green"></div>
-          </div>
-          <select class="add-block__input-status" name="status">
-            <option value="available">В наличии</option>
-            <option value="expected">Ожидается</option>
-            <option value="not-available">Нет в наличии</option>
-          </select>
-          <button class="add-block__btn-send">Отправить</button>
-        </form>
-      </div>
-      <div class="list-block">
-        <h2 class="list-block__title">автомобили в наличии</h2>
-        <table class="list-block__table">
-          <th class="table-head">
-            <td class="title">Название</td>
-            <td class="year">Год</td>
-            <td class="color">Цвет</td>
-            <td class="status">Статус</td>
-            <td class="price">Цена</td>
-            <td class="delete"></td>
-          </th>
-        </table>
-      </div>
-    </section>
-    <footer class="footer">
-      <p class="footer__copyright">© 2020 captain quack</p>
-      <p class="footer__clam">Десница тысячелетия и моллюск!</p>
-    </footer>
+    <div class="wrapper">
+      <header class="header">
+        <img class="header__logo" src="./assets/DUCK.png" alt="logo-duck" />
+      </header>
+      <main class="main">
+        <h1 class="main-title">
+          <span class="exclamation-mark">!</span>Ay caramba!
+        </h1>
+        <div class="add-block">
+          <form class="add-block__form">
+            <input type="text" class="add-block__input-title" name="title" />
+            <input type="number" class="add-block__input-year" name="year" />
+            <input type="number" class="add-block__input-price" name="price" />
+            <input
+              type="text"
+              class="add-block__input-description"
+              name="description"
+            />
+            <div class="add-block__colors">
+              <p class="add-block__colors-title">Цвета</p>
+              <ul class="colors">
+                <li class="white"></li>
+                <li class="black"></li>
+                <li class="grey"></li>
+                <li class="red"></li>
+                <li class="green"></li>
+              </ul>
+            </div>
+            <div class="add-block__select-status" name="status">
+              <div class="select-title">Статус</div>
+              <ul class="select-body">
+                <li class="select-body-item" data-select-value="available">В наличии</li>
+                <li class="select-body-item" data-select-value="expected">Ожидается</li>
+                <li class="select-body-item" data-select-value="not-available">Нет в наличии</li>
+              </ul>
+            </div>
+            <button class="add-block__btn-send">Отправить</button>
+          </form>
+        </div>
+        <div class="list-block">
+          <h2 class="list-block__title">Автомобили в наличии</h2>
+          <table class="list-block__table">
+            <th class="table-head">
+              <td class="title">Название</td>
+              <td class="year">Год</td>
+              <td class="color">Цвет</td>
+              <td class="status">Статус</td>
+              <td class="price">Цена</td>
+              <td class="delete"></td>
+            </th>
+          </table>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2020 captain quack</p>
+        <p class="footer__clam">Десница тысячелетия и моллюск!</p>
+      </footer>
+    </div>
   </body>
 </html>
