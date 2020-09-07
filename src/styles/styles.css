@@ -151,6 +151,7 @@ input[type="number"] {
 /* Button style */
 .add-block__btn-send {
   grid-area: send;
+  min-width: 150px;
   border: none;
   height: 44px;
   background-color: #c3002f;
@@ -234,6 +235,7 @@ input[type="number"] {
   border-top-color: #282d30;
   z-index: 2;
   padding: 10px;
+  background-color: #fff;
 }
 
 .select-body-item {
@@ -445,7 +447,7 @@ ul {
       "description description"
       "colors colors"
       "status send";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, calc(50% - 10px));
   }
 
   .table-row {
