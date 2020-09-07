@@ -17,7 +17,7 @@
       </header>
       <main class="main">
         <h1 class="main-title">&#161;Ay caramba!</h1>
-        <form class="add-block__form">
+        <form class="add-block__form" id="add-block-form">
           <div class="input-slot title">
             <label for="title" class="label">Название</label>
             <input
@@ -32,6 +32,9 @@
             <input
               id="year"
               type="number"
+              min="1900"
+              max="2099"
+              step="1"
               class="add-block__input-year"
               name="year"
             />
@@ -77,13 +80,9 @@
             <div class="select-title">Статус</div>
             <img src="./assets/triangle.svg" alt="arrow-bottom" />
             <ul class="select-body">
-              <li class="select-body-item" data-select-value="available">
-                В наличии
-              </li>
-              <li class="select-body-item" data-select-value="expected">
-                Ожидается
-              </li>
-              <li class="select-body-item" data-select-value="not-available">
+              <li class="select-body-item" data-status="in_stock">В наличии</li>
+              <li class="select-body-item" data-status="pednding">Ожидается</li>
+              <li class="select-body-item" data-status="out_of_stock">
                 Нет в наличии
               </li>
             </ul>
@@ -104,24 +103,7 @@
               <div class="table-price">Цена</div>
               <div class="table-delete"></div>
             </div>
-            <div class="table-row">
-              <div class="table-ceil table-title">
-                2.0 PowerShift Trend Sport 150 л.с. АКПП
-              </div>
-              <div class="table-ceil table-year">2012</div>
-              <div class="table-ceil table-color-value">
-                <div class="color red"></div>
-              </div>
-              <div class="table-ceil table-status">Нет в наличии</div>
-              <div class="table-ceil table-price">1 189 900 руб.</div>
-              <div class="table-ceil table-delete">
-                <button>Удалить</button>
-              </div>
-              <div class="table-ceil table-description">
-                + доп. опция «Радио-навигационная система Amundasen 2DIN, CD,
-                MP3
-              </div>
-            </div>
+            <div class="table-body" id="table-body"></div>
           </div>
         </div>
       </main>
