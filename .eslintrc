@@ -7,7 +7,17 @@
   "plugins": ["prettier"],
   "rules": {
     "semi": ["error", "never"],
-    "object-curly-spacing": ["error", "always"]
+    "object-curly-spacing": ["error", "always"],
+    "require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "FunctionDeclaration": false,
+          "MethodDefinition": false,
+          "ClassDeclaration": false
+        }
+      }
+    ]
   },
   "parser": "babel-eslint"
 }
