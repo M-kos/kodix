@@ -55,10 +55,88 @@ body {
   flex-grow: 1;
 }
 
+/* Title style */
+.main-title {
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 49px;
+  color: #282d30;
+}
+
+/* Form style */
+.add-block__form {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  grid-template:
+    "title year price"
+    "description description description"
+    "colors status send";
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Inputs style */
+.add-block__form input {
+  border-color: #dadada;
+  border-width: 1px;
+  border-style: solid;
+  border-bottom-width: 2px;
+  height: 40px;
+  padding: 10px;
+}
+
+.add-block__form label {
+  font-size: 14px;
+  line-height: 24px;
+  color: #8b8b8b;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.label {
+  position: absolute;
+}
+
+.label-active {
+  transform: translateY(100px);
+  transition: ease-in-out;
+}
+
+.add-block__form input:focus {
+  outline: none;
+  border-bottom-color: #000;
+}
+
+.add-block__form .error {
+  border-bottom-color: #c3002f;
+}
+
+.input-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.title {
+  grid-area: title;
+}
+
+.year {
+  grid-area: year;
+}
+
+.price {
+  grid-area: price;
+}
+
+.description {
+  grid-area: description;
+}
+
 /* Button style */
 .add-block__btn-send {
+  grid-area: send;
   border: none;
-  min-width: 306px;
   min-height: 44px;
   background-color: #c3002f;
   border-radius: 4px;
@@ -89,9 +167,18 @@ body {
   padding-right: 20px;
 }
 
+/* Select style */
+.add-block__select-status {
+  grid-area: status;
+}
+
 /* Color list style */
 ul {
   list-style: none;
+}
+
+.add-block__colors {
+  grid-area: colors;
 }
 
 .add-block__colors-title {
@@ -162,15 +249,21 @@ ul {
     padding-left: 10px;
     padding-right: 10px;
   }
-
-  .add-block__btn-send {
-    min-width: 220px;
-  }
 }
 
 @media (max-width: 572px) {
   .header__logo {
     width: 350px;
+  }
+
+  .add-block__form {
+    grid-template:
+      "title title"
+      "year price"
+      "description description"
+      "colors colors"
+      "status send";
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -181,9 +274,5 @@ ul {
 
   .main {
     padding: 30px 0 0 0;
-  }
-
-  .add-block__btn-send {
-    min-width: 160px;
   }
 }
